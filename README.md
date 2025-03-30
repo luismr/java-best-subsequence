@@ -6,6 +6,58 @@
 
 A Java implementation for finding the best subsequence in a given sequence.
 
+## Problem Description
+
+Given an array A of n integers and a positive integer k, find a subsequence of length k where the "special value" is minimized.
+
+The special value of a subsequence is defined as the sum of absolute differences between consecutive elements in the subsequence.
+
+For example, if we have a subsequence [1, 4, 2]:
+- |4 - 1| = 3 (first pair)
+- |2 - 4| = 2 (second pair)
+- Special value = 3 + 2 = 5
+
+### Examples
+
+1. Basic Example:
+```
+Input:
+n = 5, k = 3
+A = [1, 2, 3, 4, 5]
+
+Output: 2
+
+Explanation:
+Best subsequence is [1, 2, 3]
+Special value = |2-1| + |3-2| = 1 + 1 = 2
+```
+
+2. Example with Negative Numbers:
+```
+Input:
+n = 5, k = 3
+A = [-1, 2, -3, 4, -5]
+
+Output: 4
+
+Explanation:
+Best subsequence is [-1, 2, -3]
+Special value = |2-(-1)| + |(-3)-2| = 3 + 5 = 8
+```
+
+3. Example with Equal Numbers:
+```
+Input:
+n = 5, k = 3
+A = [1, 1, 1, 1, 1]
+
+Output: 0
+
+Explanation:
+Any subsequence of length 3 will give special value = 0
+Because |1-1| + |1-1| = 0 + 0 = 0
+```
+
 ## Project Structure
 
 ```
@@ -44,6 +96,25 @@ cd java-best-subsequence
 3. Build the project:
 ```bash
 mvn clean install
+```
+
+## Usage
+
+The program reads input from standard input (stdin) in the following format:
+1. First line: integer n (array length)
+2. Second line: n integers (array elements)
+3. Third line: integer k (subsequence length)
+
+Example input:
+```
+5
+1 2 3 4 5
+3
+```
+
+To run the program:
+```bash
+java -cp target/java-best-subsequence-1.0-SNAPSHOT.jar Main
 ```
 
 ## Running the Tests
